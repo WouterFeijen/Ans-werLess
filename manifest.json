@@ -1,0 +1,31 @@
+{
+
+  "description": "Remove answers from results in Ans-App quizzes, so that practice, without seeing the answers, is possible again.",
+  "manifest_version": 2,
+  "name": "Ans-werLess",
+  "version": "1.0",
+  "homepage_url": "",
+  "icons": {
+    "48": "icons/-48.png"
+  },
+
+  "permissions": [
+    "activeTab"
+  ],
+
+  "browser_action": {
+    "default_icon": "icons/answerLess-icon32.png",
+    "theme_icons": [{
+        "light": "icons/answerLess-icon32-light.png",
+        "dark": "icons/answerLess-icon32-dark.png",
+        "size": 32
+    }],
+    "default_title": "Beastify",
+    "default_popup": "popup/choose_beast.html"
+  },
+
+  "web_accessible_resources": [
+    "beasts/*.jpg"
+  ]
+
+}

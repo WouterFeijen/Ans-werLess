@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "name": "Ans-werLess",
   "version": "1.0",
-  "homepage_url": "",
+  "homepage_url": "https://github.com/WouterFeijen/Ans-werLess",
   "icons": {
     "48": "icons/-48.png"
   },
@@ -15,17 +15,26 @@
 
   "browser_action": {
     "default_icon": "icons/answerLess-icon32.png",
-    "theme_icons": [{
-        "light": "icons/answerLess-icon32-light.png",
-        "dark": "icons/answerLess-icon32-dark.png",
+    "theme_icons": [
+      {
+        "light": "icons/light/answerLess-icon32-light.png",
+        "dark": "icons/dark/answerLess-icon32-dark.png",
         "size": 32
-    }],
-    "default_title": "Beastify",
-    "default_popup": "popup/choose_beast.html"
-  },
+      },
 
-  "web_accessible_resources": [
-    "beasts/*.jpg"
-  ]
+      {
+        "light": "icons/light/answerLess-icon48-light.png",
+        "dark": "icons/dark/answerLess-icon48-dark.png",
+        "size": 48
+      },
+      
+      {
+        "light": "icons/light/answerLess-icon128-light.png",
+        "dark": "icons/dark/answerLess-icon128-dark.png",
+        "size": 128
+      }],
+    "default_title": "Ans-werLess",
+    "default_popup": "popup/menu.html"
+  }
 
 }

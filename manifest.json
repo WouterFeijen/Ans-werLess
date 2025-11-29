@@ -1,40 +1,64 @@
 {
-
-  "description": "Remove answers from results in Ans-App quizzes, so that practice, without seeing the answers, is possible again.",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Ans-werLess",
   "version": "1.0",
+  "description": "Remove answers from results in Ans-App quizzes, so that practice, without seeing the answers, is possible again.",
   "homepage_url": "https://github.com/WouterFeijen/Ans-werLess",
+
+"browser_specific_settings": {
+    "gecko": {
+      "id": "answerless@wouterfeijen",
+      "strict_min_version": "109.0"
+    }
+  },
+
   "icons": {
-    "48": "icons/-48.png"
+    "16": "icons/light/answerLess-icon16-light.png",
+    "32": "icons/light/answerLess-icon32-light.png",
+    "48": "icons/light/answerLess-icon48-light.png",
+    "96": "icons/light/answerLess-icon96-light.png",
+    "128": "icons/light/answerLess-icon128-light.png"
   },
 
   "permissions": [
     "activeTab"
   ],
 
-  "browser_action": {
-    "default_icon": "icons/answerLess-icon32.png",
+  "action": {
+    "default_popup": "popup/menu.html",
+    "default_title": "Ans-werLess",
+    "default_icon": {
+        "16": "icons/light/answerLess-icon16-light.png",
+        "32": "icons/light/answerLess-icon32-light.png"
+    },
     "theme_icons": [
+      {
+        "light": "icons/light/answerLess-icon16-light.png",
+        "dark": "icons/dark/answerLess-icon16-dark.png",
+        "size": 16
+      },
       {
         "light": "icons/light/answerLess-icon32-light.png",
         "dark": "icons/dark/answerLess-icon32-dark.png",
         "size": 32
       },
-
       {
         "light": "icons/light/answerLess-icon48-light.png",
         "dark": "icons/dark/answerLess-icon48-dark.png",
         "size": 48
       },
-      
       {
         "light": "icons/light/answerLess-icon128-light.png",
         "dark": "icons/dark/answerLess-icon128-dark.png",
         "size": 128
-      }],
-    "default_title": "Ans-werLess",
-    "default_popup": "popup/menu.html"
-  }
+      }
+    ]
+  },
 
+  "content_scripts": [
+    {
+      "matches": ["https://ans.app/*"],
+      "js": ["content.js"]
+    }
+  ]
 }
